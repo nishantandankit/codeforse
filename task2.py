@@ -38,6 +38,8 @@ y = df['sentiment']
 tfidf_vectorizer = TfidfVectorizer()
 X_tfidf = tfidf_vectorizer.fit_transform(X_text)
 
+# --- Split Data and Train the Model (with Stratification) ---
+# Total 16 samples. The split will be 12 for training and 4 for testing.
 X_train, X_test, y_train, y_test = train_test_split(
     X_tfidf, y, test_size=0.25, random_state=42, stratify=y
 )
